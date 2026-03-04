@@ -29,7 +29,7 @@ const AboutPage = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 [Your story here — how you got into this work, what drives you, your journey
-                from early career to founding Open Waves Design.]
+                from early career to launching your consulting practice.]
               </p>
               <p>
                 [What you believe about technology in the nonprofit space — your philosophy,
@@ -50,7 +50,7 @@ const AboutPage = () => {
       {/* Philosophy / Differentiators */}
       <section className="bg-section-warm">
         <div className="container py-16 md:py-24">
-          <h2 className="text-3xl text-foreground mb-10 text-center">What Sets Open Waves Apart</h2>
+          <h2 className="text-3xl text-foreground mb-10 text-center">What Sets Craig Apart</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
