@@ -3,13 +3,15 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// Navigation links displayed in the header; edit this array to add/remove pages.
+// Note: the "Contact" link is intentionally omitted so that only the
+// primary "Get in Touch" button is shown for that action.
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
   { label: "Case Studies", path: "/case-studies" },
   { label: "Insights", path: "/insights" },
-  { label: "Contact", path: "/contact" },
 ];
 
 const Header = () => {
