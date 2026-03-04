@@ -101,7 +101,7 @@ const ServicesPage = () => {
       <section className="bg-primary" style={{ background: "var(--hero-gradient)" }}>
         <div className="container py-16 md:py-20 text-center">
           <h2 className="text-3xl text-primary-foreground mb-4">Not Sure Where to Start?</h2>
-          <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8">
+          <p className="text-primary-foreground/90 max-w-lg mx-auto mb-8">
             Book a free 30-minute discovery call. We'll discuss your challenges and I'll
             share initial recommendations — no strings attached.
           </p>

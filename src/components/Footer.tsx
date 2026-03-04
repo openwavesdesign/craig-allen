@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-6 border-t text-center">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Craig Allen. All rights reserved.
           </p>
         </div>

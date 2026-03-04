@@ -55,10 +55,10 @@ const InsightsPage = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="bg-secondary text-secondary-foreground text-xs font-medium px-2.5 py-1 rounded-full">
+                  <span className="bg-secondary text-secondary-foreground text-sm font-medium px-2.5 py-1 rounded-full">
                     {post.category}
                   </span>
-                  <span className="text-xs text-muted-foreground">{post.date}</span>
+                  <span className="text-sm text-muted-foreground">{post.date}</span>
                 </div>
                 <h3 className="text-lg text-foreground mb-2 leading-snug">{post.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
