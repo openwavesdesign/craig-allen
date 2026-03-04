@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const AboutPage = () => {
+  usePageMeta({
+    title: "About",
+    description: "Learn about Craig Allen, a Digital Infrastructure & Experience Consultant helping nonprofits build better technology systems.",
+  });
+
   return (
     <div>
       {/* Hero */}
@@ -28,21 +34,22 @@ const AboutPage = () => {
             <h2 className="text-3xl text-foreground mb-6">The Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                [Your story here — how you got into this work, what drives you, your journey
-                from early career to launching your consulting practice.]
+                After 14 years leading web development, content strategy, and user experience at an educational nonprofit, I now help mission-driven organizations strengthen their digital foundations. I work with nonprofits to improve websites, streamline workflows, optimize user experience, and integrate the tools that support fundraising, communication, and growth.
               </p>
               <p>
-                [What you believe about technology in the nonprofit space — your philosophy,
-                your approach, why you care about this specific intersection.]
+                My approach blends strategic oversight with hands-on execution, ensuring nonprofits get sustainable, efficient, and user-friendly digital systems.
               </p>
               <p>
-                [What makes you different — your unique perspective, methodology, or background
-                that sets you apart from other consultants.]
+                Founder of Open Waves Design, I offer audits, workflow optimization, and ongoing advisory services tailored to the unique needs of mission-driven organizations.
               </p>
             </div>
           </div>
-          <div className="bg-muted rounded-lg aspect-[4/5] flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">Professional Photo Placeholder</span>
+          <div className="bg-muted rounded-lg aspect-[4/5] overflow-hidden">
+            <img 
+              src="/images/craig-allen-sitting.webp" 
+              alt="Craig Allen"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>

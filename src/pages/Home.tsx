@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Users, Settings } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const services = [
   {
@@ -27,21 +28,22 @@ const stats = [
 ];
 
 const HomePage = () => {
+  usePageMeta({
+    title: "Digital Infrastructure for Nonprofits That Works",
+    description: "Craig Allen is a Digital Infrastructure & Experience Consultant helping nonprofits build better technology systems that amplify their impact.",
+  });
   return (
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
         <div className="container py-20 md:py-32 relative z-10">
           <div className="max-w-2xl animate-fade-up">
-            <p className="text-primary-foreground font-medium text-sm tracking-wide uppercase mb-4">
-              Craig Allen Consulting
-            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
-              Digital Infrastructure for Nonprofits That Actually Works
+              Digital Infrastructure for Nonprofits That Works
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-lg">
-              Craig Allen helps mission-driven organizations build technology foundations
-              that amplify impact — not create headaches.
+              Helping mission-driven organizations build technology foundations
+              that amplify impact and get results.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild variant="hero" size="lg">
@@ -81,7 +83,7 @@ const HomePage = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl text-foreground mb-4">How I Help Nonprofits Thrive</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Three core offerings designed to transform your organization's digital backbone.
+              Services designed to transform your organization's digital backbone.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">

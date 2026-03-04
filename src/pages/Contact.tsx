@@ -3,8 +3,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const ContactPage = () => {
+  usePageMeta({
+    title: "Contact",
+    description: "Get in touch with Craig Allen to discuss how he can help your nonprofit strengthen its digital infrastructure and achieve greater impact.",
+  });
   return (
     <div>
       {/* Hero */}
@@ -72,8 +77,8 @@ const ContactPage = () => {
               <h3 className="text-xl text-foreground mb-2">Email Directly</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Reach out anytime at{" "}
-                <a href="mailto:hello@openwavesdesign.com" className="text-primary hover:underline">
-                  hello@openwavesdesign.com
+                <a href="mailto:hello@craigallen.net" className="text-primary hover:underline">
+                  hello@craigallen.net
                 </a>
               </p>
             </div>

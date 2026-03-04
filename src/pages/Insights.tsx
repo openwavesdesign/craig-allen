@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const posts = [
   {
@@ -27,6 +28,10 @@ const posts = [
 ];
 
 const InsightsPage = () => {
+  usePageMeta({
+    title: "Insights",
+    description: "Practical tips, strategies, and perspectives on building better digital infrastructure for mission-driven organizations.",
+  });
   return (
     <div>
       {/* Hero */}

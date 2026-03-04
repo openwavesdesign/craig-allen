@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Users, Settings, CheckCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const services = [
   {
@@ -39,6 +40,10 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  usePageMeta({
+    title: "Services",
+    description: "Consulting services from Craig Allen designed to help nonprofits build better digital infrastructure and achieve greater impact.",
+  });
   return (
     <div>
       {/* Hero */}

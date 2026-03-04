@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const caseStudies = [
   {
@@ -45,6 +46,10 @@ const caseStudies = [
 ];
 
 const CaseStudiesPage = () => {
+  usePageMeta({
+    title: "Case Studies",
+    description: "Explore case studies showcasing how Craig Allen has helped nonprofits improve their digital infrastructure and achieve measurable impact.",
+  });
   return (
     <div>
       {/* Hero */}

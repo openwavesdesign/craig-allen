@@ -42,7 +42,7 @@ const Header = () => {
             </Link>
           ))}
           <Button asChild size="sm" className="ml-2">
-            <Link to="/contact">Book a Call</Link>
+            <Link to="/contact">Get in Touch</Link>
           </Button>
         </nav>
 
@@ -75,7 +75,7 @@ const Header = () => {
               </Link>
             ))}
             <Button asChild size="sm" className="mt-2">
-              <Link to="/contact" onClick={() => setMobileOpen(false)}>Book a Call</Link>
+              <Link to="/contact" onClick={() => setMobileOpen(false)}>Get in Touch</Link>
             </Button>
           </nav>
         </div>

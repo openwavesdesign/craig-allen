@@ -43,8 +43,8 @@ const Footer = () => {
                 <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
               </li>
               <li>
-                <a href="mailto:hello@openwavesdesign.com" className="hover:text-foreground transition-colors">
-                  hello@openwavesdesign.com
+                <a href="mailto:hello@craigallen.net" className="hover:text-foreground transition-colors">
+                  hello@craigallen.net
                 </a>
               </li>
             </ul>
