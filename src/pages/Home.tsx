@@ -34,7 +34,7 @@ const HomePage = () => {
         <div className="container py-20 md:py-32 relative z-10">
           <div className="max-w-2xl animate-fade-up">
             <p className="text-primary-foreground/70 font-medium text-sm tracking-wide uppercase mb-4">
-              Open Waves Design
+              Craig Allen Consulting
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
               Digital Infrastructure for Nonprofits That Actually Works

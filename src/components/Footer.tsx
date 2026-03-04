@@ -8,9 +8,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="font-serif text-primary-foreground text-sm font-bold">OW</span>
+                <span className="font-serif text-primary-foreground text-sm font-bold">CA</span>
               </div>
-              <span className="font-serif text-lg text-foreground">Open Waves Design</span>
+              <span className="font-serif text-lg text-foreground">Craig Allen</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
               Digital infrastructure and experience consulting for nonprofits.
@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Open Waves Design. All rights reserved.
+            © {new Date().getFullYear()} Craig Allen. All rights reserved.
           </p>
         </div>
       </div>
