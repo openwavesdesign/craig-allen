@@ -1,16 +1,67 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { useForm, ValidationError } from "@formspree/react";
 import { Mail, Calendar } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { AnimatedElement } from "@/components/AnimatedElement";
+
+function ContactForm() {
+  const [state, handleSubmit] = useForm("xnjbevvv");
+  if (state.succeeded) {
+    return (
+      <div className="space-y-5">
+        <div className="bg-secondary/20 border border-accent rounded-lg p-6">
+          <p className="text-foreground font-medium mb-2">Thanks for joining!</p>
+          <p className="text-sm text-muted-foreground">
+            I've received your message and will get back to you as soon as possible.
+          </p>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="space-y-2">
+        <label htmlFor="email" className="text-sm font-medium text-foreground">
+          Email Address
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="you@organization.org"
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+      </div>
+      <div className="space-y-2">
+        <label htmlFor="message" className="text-sm font-medium text-foreground">
+          How can I help?
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell me about your project or challenge..."
+          rows={5}
+          className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
+      </div>
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+      >
+        {state.submitting ? "Sending..." : "Submit"}
+      </button>
+    </form>
+  );
+}
 
 const ContactPage = () => {
   usePageMeta({
     title: "Contact",
     description: "Get in touch with Craig Allen to discuss how he can help your nonprofit strengthen its digital infrastructure and achieve greater impact.",
   });
+
   return (
     <div>
       {/* Hero */}
@@ -34,29 +85,7 @@ const ContactPage = () => {
           {/* Form */}
           <AnimatedElement animation="fade-up">
             <h2 className="text-2xl text-foreground mb-6">Send a Message</h2>
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="org">Organization</Label>
-                  <Input id="org" placeholder="Your organization" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="you@organization.org" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">How can I help?</Label>
-                <Textarea id="message" placeholder="Tell me about your project or challenge..." rows={5} />
-              </div>
-              <Button type="submit" size="lg" className="w-full sm:w-auto">
-                Send Message
-              </Button>
-            </form>
+            <ContactForm />
           </AnimatedElement>
 
           {/* Sidebar */}
