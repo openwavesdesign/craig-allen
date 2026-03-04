@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const ContactPage = () => {
   usePageMeta({
@@ -15,7 +16,7 @@ const ContactPage = () => {
       {/* Hero */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24">
-          <div className="max-w-2xl">
+          <AnimatedElement className="max-w-2xl" animation="fade-up">
             <p className="text-accent font-medium text-sm tracking-wide uppercase mb-3">Contact</p>
             <h1 className="text-4xl md:text-5xl text-foreground mb-6">
               Let's Build Something Better Together
@@ -24,14 +25,14 @@ const ContactPage = () => {
               Whether you're ready to start a project or just want to explore how I can help,
               I'd love to hear from you.
             </p>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       <section className="container py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Form */}
-          <div>
+          <AnimatedElement animation="fade-up">
             <h2 className="text-2xl text-foreground mb-6">Send a Message</h2>
             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -56,10 +57,10 @@ const ContactPage = () => {
                 Send Message
               </Button>
             </form>
-          </div>
+          </AnimatedElement>
 
           {/* Sidebar */}
-          <div className="space-y-8">
+          <AnimatedElement animation="scale-in">
             <div className="bg-section-warm rounded-lg p-8 border">
               <Calendar className="h-8 w-8 text-accent mb-4" />
               <h3 className="text-xl text-foreground mb-2">Book a Call</h3>
@@ -82,7 +83,7 @@ const ContactPage = () => {
                 </a>
               </p>
             </div>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
     </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const AboutPage = () => {
   usePageMeta({
@@ -14,7 +15,7 @@ const AboutPage = () => {
       {/* Hero */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24">
-          <div className="max-w-2xl">
+          <AnimatedElement className="max-w-2xl" animation="fade-up">
             <p className="text-accent font-medium text-sm tracking-wide uppercase mb-3">About</p>
             <h1 className="text-4xl md:text-5xl text-foreground mb-6">
               Building Tech That Serves the Mission
@@ -23,14 +24,14 @@ const AboutPage = () => {
               Craig Allen is a Digital Infrastructure & Experience Consultant who partners
               with nonprofits to create technology systems that are as purposeful as the work they support.
             </p>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* Story */}
       <section className="container py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <AnimatedElement animation="fade-up">
             <h2 className="text-3xl text-foreground mb-6">The Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
@@ -43,22 +44,26 @@ const AboutPage = () => {
                 Founder of Open Waves Design, I offer audits, workflow optimization, and ongoing advisory services tailored to the unique needs of mission-driven organizations.
               </p>
             </div>
-          </div>
-          <div className="bg-muted rounded-lg aspect-[4/5] overflow-hidden">
-            <img 
-              src="/images/craig-allen-sitting.webp" 
-              alt="Craig Allen"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          </AnimatedElement>
+          <AnimatedElement animation="scale-in">
+            <div className="bg-muted rounded-lg aspect-[4/5] overflow-hidden">
+              <img 
+                src="/images/craig-allen-sitting.webp" 
+                alt="Craig Allen"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* Philosophy / Differentiators */}
       <section className="bg-section-warm">
         <div className="container py-16 md:py-24">
-          <h2 className="text-3xl text-foreground mb-10 text-center">What Sets Craig Apart</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <AnimatedElement animation="fade-down" className="mb-10">
+            <h2 className="text-3xl text-foreground text-center">What Sets Craig Apart</h2>
+          </AnimatedElement>
+          <AnimatedElement stagger data-animate-group className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "Mission-First Thinking",
@@ -78,22 +83,24 @@ const AboutPage = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* CTA */}
       <section className="container py-16 md:py-24 text-center">
-        <h2 className="text-3xl text-foreground mb-4">Let's Work Together</h2>
-        <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-          I'd love to learn about your organization and explore how we can strengthen your digital foundation.
-        </p>
-        <Button asChild size="lg">
-          <Link to="/contact">
-            Get in Touch
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </Button>
+        <AnimatedElement animation="fade-up">
+          <h2 className="text-3xl text-foreground mb-4">Let's Work Together</h2>
+          <p className="text-muted-foreground max-w-lg mx-auto mb-8">
+            I'd love to learn about your organization and explore how we can strengthen your digital foundation.
+          </p>
+          <Button asChild size="lg">
+            <Link to="/contact">
+              Get in Touch
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </AnimatedElement>
       </section>
     </div>
   );

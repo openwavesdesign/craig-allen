@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const caseStudies = [
   {
@@ -55,7 +56,7 @@ const CaseStudiesPage = () => {
       {/* Hero */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24">
-          <div className="max-w-2xl">
+          <AnimatedElement className="max-w-2xl" animation="fade-up">
             <p className="text-accent font-medium text-sm tracking-wide uppercase mb-3">Case Studies</p>
             <h1 className="text-4xl md:text-5xl text-foreground mb-6">
               Real Results for Real Organizations
@@ -64,7 +65,7 @@ const CaseStudiesPage = () => {
               See how nonprofits have transformed their digital infrastructure
               and achieved measurable impact.
             </p>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -72,7 +73,7 @@ const CaseStudiesPage = () => {
       <section className="container py-16 md:py-24">
         <div className="space-y-20">
           {caseStudies.map((study) => (
-            <article key={study.id} className="border rounded-lg overflow-hidden">
+            <AnimatedElement key={study.id} animation="fade-up" className="border rounded-lg overflow-hidden">
               {/* Header */}
               <div className="bg-section-warm p-8 md:p-10">
                 <div className="flex items-center gap-2 mb-4">
@@ -117,7 +118,7 @@ const CaseStudiesPage = () => {
                   ))}
                 </div>
               </div>
-            </article>
+            </AnimatedElement>
           ))}
         </div>
       </section>
@@ -125,7 +126,8 @@ const CaseStudiesPage = () => {
       {/* CTA */}
       <section className="bg-section-warm">
         <div className="container py-16 md:py-20 text-center">
-          <h2 className="text-3xl text-foreground mb-4">Your Story Could Be Next</h2>
+          <AnimatedElement animation="fade-up">
+            <h2 className="text-3xl text-foreground mb-4">Your Story Could Be Next</h2>
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">
             Let's talk about how we can create measurable impact for your organization.
           </p>
@@ -135,6 +137,7 @@ const CaseStudiesPage = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+          </AnimatedElement>
         </div>
       </section>
     </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Users, Settings, CheckCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const services = [
   {
@@ -49,7 +50,7 @@ const ServicesPage = () => {
       {/* Hero */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24">
-          <div className="max-w-2xl">
+          <AnimatedElement className="max-w-2xl" animation="fade-up">
             <p className="text-accent font-medium text-sm tracking-wide uppercase mb-3">Services</p>
             <h1 className="text-4xl md:text-5xl text-foreground mb-6">
               Consulting Built for Nonprofit Impact
@@ -58,7 +59,7 @@ const ServicesPage = () => {
               Three focused offerings designed to transform your organization's digital
               infrastructure from a pain point into a strategic advantage.
             </p>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -66,8 +67,9 @@ const ServicesPage = () => {
       <section className="container py-16 md:py-24">
         <div className="space-y-16">
           {services.map((service, index) => (
-            <div
+            <AnimatedElement
               key={service.title}
+              animation={index % 2 === 0 ? "fade-up" : "fade-up"}
               className={`grid md:grid-cols-2 gap-10 items-start ${
                 index % 2 === 1 ? "md:direction-rtl" : ""
               }`}
@@ -97,7 +99,7 @@ const ServicesPage = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </AnimatedElement>
           ))}
         </div>
       </section>
@@ -105,7 +107,8 @@ const ServicesPage = () => {
       {/* CTA */}
       <section className="bg-primary" style={{ background: "var(--hero-gradient)" }}>
         <div className="container py-16 md:py-20 text-center">
-          <h2 className="text-3xl text-primary-foreground mb-4">Not Sure Where to Start?</h2>
+          <AnimatedElement animation="fade-up">
+            <h2 className="text-3xl text-primary-foreground mb-4">Not Sure Where to Start?</h2>
           <p className="text-primary-foreground/90 max-w-lg mx-auto mb-8">
             Book a free 30-minute discovery call. We'll discuss your challenges and I'll
             share initial recommendations — no strings attached.
@@ -116,6 +119,7 @@ const ServicesPage = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+          </AnimatedElement>
         </div>
       </section>
     </div>

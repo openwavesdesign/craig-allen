@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Users, Settings } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const services = [
   {
@@ -37,7 +38,7 @@ const HomePage = () => {
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
         <div className="container py-20 md:py-32 relative z-10">
-          <div className="max-w-2xl animate-fade-up">
+          <AnimatedElement animation="fade-up" className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
               Digital Infrastructure for Nonprofits That Works
             </h1>
@@ -56,7 +57,7 @@ const HomePage = () => {
                 <Link to="/services">Explore Services</Link>
               </Button>
             </div>
-          </div>
+          </AnimatedElement>
         </div>
         {/* Decorative element */}
         <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-accent/10 blur-3xl" />
@@ -66,27 +67,27 @@ const HomePage = () => {
       {/* Stats */}
       <section className="border-b bg-card">
         <div className="container py-10">
-          <div className="grid grid-cols-3 gap-8 text-center">
+          <AnimatedElement stagger data-animate-group className="grid grid-cols-3 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl md:text-4xl font-serif text-primary">{stat.value}</div>
                 <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* Services Preview */}
       <section className="bg-section-warm">
         <div className="container py-16 md:py-24">
-          <div className="text-center mb-12">
+          <AnimatedElement animation="fade-down" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl text-foreground mb-4">How I Help Nonprofits Thrive</h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
               Services designed to transform your organization's digital backbone.
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          </AnimatedElement>
+          <AnimatedElement stagger data-animate-group className="grid md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service.title}
@@ -97,34 +98,36 @@ const HomePage = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
               </div>
             ))}
-          </div>
-          <div className="text-center mt-10">
+          </AnimatedElement>
+          <AnimatedElement animation="fade-up" className="text-center mt-10">
             <Button asChild variant="outline" size="lg">
               <Link to="/services">
                 View All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* CTA */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24 text-center">
-          <h2 className="text-3xl md:text-4xl text-foreground mb-4">
-            Ready to Build a Stronger Digital Foundation?
-          </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-            Let's start with a free infrastructure audit to uncover what's working,
-            what's not, and where to go next.
-          </p>
-          <Button asChild size="lg">
-            <Link to="/contact">
-              Schedule Your Free Audit
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <AnimatedElement animation="fade-up">
+            <h2 className="text-3xl md:text-4xl text-foreground mb-4">
+              Ready to Build a Stronger Digital Foundation?
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto mb-8">
+              Let's start with a free infrastructure audit to uncover what's working,
+              what's not, and where to go next.
+            </p>
+            <Button asChild size="lg">
+              <Link to="/contact">
+                Schedule Your Free Audit
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </AnimatedElement>
         </div>
       </section>
     </div>

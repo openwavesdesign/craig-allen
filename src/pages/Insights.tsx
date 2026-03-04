@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { AnimatedElement } from "@/components/AnimatedElement";
 
 const posts = [
   {
@@ -37,7 +38,7 @@ const InsightsPage = () => {
       {/* Hero */}
       <section className="bg-section-cool">
         <div className="container py-16 md:py-24">
-          <div className="max-w-2xl">
+          <AnimatedElement className="max-w-2xl" animation="fade-up">
             <p className="text-accent font-medium text-sm tracking-wide uppercase mb-3">Insights</p>
             <h1 className="text-4xl md:text-5xl text-foreground mb-6">
               Ideas & Resources for Nonprofit Leaders
@@ -46,13 +47,13 @@ const InsightsPage = () => {
               Practical tips, strategies, and perspectives on building better
               digital infrastructure for mission-driven organizations.
             </p>
-          </div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* Posts Grid */}
       <section className="container py-16 md:py-24">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatedElement stagger data-animate-group className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <article key={post.id} className="bg-card rounded-lg border overflow-hidden hover:shadow-lg transition-shadow">
               <div className="bg-muted h-48 flex items-center justify-center">
@@ -70,13 +71,14 @@ const InsightsPage = () => {
               </div>
             </article>
           ))}
-        </div>
+          </AnimatedElement>
       </section>
 
       {/* Newsletter CTA */}
       <section className="bg-section-warm">
         <div className="container py-16 md:py-20 text-center">
-          <h2 className="text-3xl text-foreground mb-4">Stay in the Loop</h2>
+          <AnimatedElement animation="fade-up">
+            <h2 className="text-3xl text-foreground mb-4">Stay in the Loop</h2>
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">
             Get practical digital strategy tips delivered to your inbox.
             No spam, just insights that matter.
@@ -89,6 +91,7 @@ const InsightsPage = () => {
             />
             <Button type="submit">Subscribe</Button>
           </form>
+          </AnimatedElement>
         </div>
       </section>
     </div>
