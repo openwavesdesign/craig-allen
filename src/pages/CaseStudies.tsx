@@ -71,10 +71,10 @@ const CaseStudiesPage = () => {
               {/* Header */}
               <div className="bg-section-warm p-8 md:p-10">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="bg-secondary text-secondary-foreground text-xs font-medium px-2.5 py-1 rounded-full">
+                  <span className="bg-secondary text-secondary-foreground text-sm font-medium px-2.5 py-1 rounded-full">
                     {study.sector}
                   </span>
-                  <span className="text-muted-foreground text-xs">{study.client}</span>
+                  <span className="text-muted-foreground text-sm">{study.client}</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl text-foreground">{study.title}</h2>
               </div>
@@ -107,7 +107,7 @@ const CaseStudiesPage = () => {
                   {study.metrics.map((m) => (
                     <div key={m.label}>
                       <div className="text-2xl font-serif text-primary">{m.value}</div>
-                      <div className="text-xs text-muted-foreground mt-1">{m.label}</div>
+                      <div className="text-sm text-muted-foreground mt-1">{m.label}</div>
                     </div>
                   ))}
                 </div>

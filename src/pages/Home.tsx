@@ -33,13 +33,13 @@ const HomePage = () => {
       <section className="relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
         <div className="container py-20 md:py-32 relative z-10">
           <div className="max-w-2xl animate-fade-up">
-            <p className="text-primary-foreground/70 font-medium text-sm tracking-wide uppercase mb-4">
+            <p className="text-primary-foreground font-medium text-sm tracking-wide uppercase mb-4">
               Craig Allen Consulting
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
               Digital Infrastructure for Nonprofits That Actually Works
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8 max-w-lg">
+            <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8 max-w-lg">
               Craig Allen helps mission-driven organizations build technology foundations
               that amplify impact — not create headaches.
             </p>
