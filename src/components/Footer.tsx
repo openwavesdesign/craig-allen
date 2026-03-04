@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-sans font-semibold text-sm mb-4 text-foreground">Navigation</h4>
+            <h3 className="font-sans font-semibold text-sm mb-4 text-foreground">Navigation</h3>
             <ul className="space-y-2.5">
               {[
                 { label: "About", path: "/about" },
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-sans font-semibold text-sm mb-4 text-foreground">Get in Touch</h4>
+            <h3 className="font-sans font-semibold text-sm mb-4 text-foreground">Get in Touch</h3>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li>
                 <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
